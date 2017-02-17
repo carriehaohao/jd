@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>touch事件</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            height: 200px;
+            width: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+
+<script>
+    /*
+    * 1.touchstart 手指刚刚触摸到屏幕时
+    * 2.touchmove 手指在屏幕上滑动时
+    * 3.touchend 手指离开屏幕时
+    * 4.touchcancel 被迫终止滑动（系统终止）
+    * */
+
+    /*怎样绑定这些事件*/
+    var box = document.querySelector('.box');
+
+    /*在移动端不能用onXXX方式绑定事件*/
+    /*绑定touchstart*/
+    box.addEventListener('touchstart', function (e) {
+        console.log('touchstart');
+        console.log(e);
+    });
+    /*绑定touchmove*/
+    box.addEventListener('touchmove', function (e) {
+        console.log('touchmove');
+        console.log(e);
+    });
+    /*绑定touchend*/
+    box.addEventListener('touchend', function (e) {
+        console.log('touchend');
+        console.log(e);
+    });
+
+    /*
+    * targetTouches    当前元素的所有触摸点的集合（几根手指在当前元素上）
+    * touches    页面上的所有触摸点的集合
+    * changedTouches    页面上最新更改的所有触摸点的集合
+    * */
+
+</script>
+
+</body>
+</html>
